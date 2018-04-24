@@ -25,11 +25,16 @@
 # Inherit from oppo-common
 -include device/oppo/common/BoardConfigCommon.mk
 
+SRC_MEDIA_HAL_DIR := hardware/qcom/media-caf/msm8998
+SRC_DISPLAY_HAL_DIR := hardware/qcom/display-caf/msm8998
+
 ALLOW_MISSING_DEPENDENCIES=true
+WITH_BLISS_CHARGER := false
 
 PLATFORM_PATH := device/oneplus/msm8998-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+#TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+#TARGET_SPECIFIC_HEADER_PATH := hardware/qcom/msm8998/kernel-headers
 
 BOARD_VENDOR := oneplus
 
@@ -163,11 +168,14 @@ QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
 # Camera
+BOARD_USES_EASEL := true
+#-include hardware/google/easel/camera/Android.mk
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 TARGET_USES_QTI_CAMERA2CLIENT := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_USES_MEDIA_EXTENSIONS := true
+
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true

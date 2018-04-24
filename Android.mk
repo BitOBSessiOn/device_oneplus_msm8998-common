@@ -27,6 +27,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+#LOCAL_C_INCLUDES := $(KERNEL_HEADERS)
+
 ifneq ($(filter cheeseburger dumpling,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))

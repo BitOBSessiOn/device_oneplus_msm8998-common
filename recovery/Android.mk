@@ -6,9 +6,15 @@ ifneq ($(TARGET_PLATFORM_DEVICE_BASE),)
 LOCAL_CFLAGS += -DUSES_BOOTDEVICE_PATH
 endif
 
+#LOCAL_C_INCLUDES := \
+#    $(call project-path-for,recovery) \
+#    $(call project-path-for,recovery)/updater/include \
+
 LOCAL_C_INCLUDES := \
-    $(call project-path-for,recovery) \
-    $(call project-path-for,recovery)/updater/include \
+    $(LOCAL_PATH) \
+    $(LOCAL_PATH)/updater/include \
+    bootable/recovery \
+    bootable/recovery/updater/include \
 
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_oneplus
